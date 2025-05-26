@@ -11,7 +11,7 @@ const AnatomySection = () => {
           alt="Anatomy Model" 
           className="anatomy-actual-image"
         />
-        <span className="anatomy-label healthy-leg-label">Healthly Leg</span>
+        <span className="anatomy-label healthy-leg-label">Healthy Leg</span>
         <span className="anatomy-label healthy-heart-label">Healthy Heart</span>
       </div>
       <HealthStatusCards />

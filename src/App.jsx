@@ -8,13 +8,16 @@ import './styles/components.css';
 
 function App() {
   return (
-    <div className="app-container">
+    <>
+      
+      <div className="app-container">
         <Header />
         <div className="main-content-area">
-      <Sidebar />
-        <Dashboard />
+          <Sidebar />
+          <Dashboard />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

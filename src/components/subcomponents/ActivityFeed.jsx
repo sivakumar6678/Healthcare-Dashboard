@@ -1,5 +1,6 @@
 import React from 'react';
 const ActivityFeed = () => {
+  // Dummy data for activity bars
   const activityData = [
     { day: 'Mon', values: [30, 50, 20] },
     { day: 'Tues', values: [40, 60, 30] },
@@ -13,8 +14,24 @@ const ActivityFeed = () => {
   return (
     <div className="activity-feed-container card-style">
       <div className="activity-feed-header">
-        <h3 className="activity-feed-title">Activity</h3>
-        <p className="activity-feed-summary">3 appointments on this week</p>
+        <div>
+          <h3 className="activity-feed-title">Activity</h3>
+          <p className="activity-feed-summary">5 appointments this week</p>
+        </div>
+        <div className="activity-legend">
+          <div className="legend-item">
+            <span className="legend-color legend-color-1"></span>
+            <span className="legend-text">Appointments</span>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color legend-color-2"></span>
+            <span className="legend-text">Completed</span>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color legend-color-3"></span>
+            <span className="legend-text">Cancelled</span>
+          </div>
+        </div>
       </div>
       <div className="activity-bars-chart">
         {activityData.map(data => (
@@ -35,5 +52,6 @@ const ActivityFeed = () => {
     </div>
   );
 };
+
 
 export default ActivityFeed;

@@ -1,4 +1,4 @@
-body {
+  body {
     margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -25,8 +25,8 @@ body {
   /* General card styling */
   .card-style {
     background-color: #ffffff;
-    border-radius: 15px; /* Rounded corners for cards */
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow for cards */
-    margin-bottom: 20px; /* Space between cards */
+    border-radius: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    padding: 25px;
   }
