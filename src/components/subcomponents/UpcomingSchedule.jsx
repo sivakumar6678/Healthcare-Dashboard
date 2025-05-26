@@ -7,15 +7,18 @@ const UpcomingSchedule = () => (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
       <h2>Upcoming Appointments</h2>
       <button style={{ 
-        background: '#3b5998', 
+        background: '#1890ff', 
         color: 'white', 
         border: 'none', 
-        padding: '5px 10px', 
-        borderRadius: '4px',
-        fontSize: '13px',
-        cursor: 'pointer'
+        padding: '8px 15px', 
+        borderRadius: '8px',
+        fontSize: '14px',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '5px'
       }}>
-        + New
+        <span>+</span> New Appointment
       </button>
     </div>
     

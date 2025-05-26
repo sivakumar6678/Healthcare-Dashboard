@@ -1,29 +1,21 @@
-import React from 'react';
-
-const Header = () => (
-  <header className="header">
-    <div className="logo">MediTrack</div>
-    <div className="search-bar">
-      <span>🔍</span>
-      <input 
-        type="text" 
-        placeholder="Search..." 
-        style={{ 
-          border: 'none', 
-          background: 'transparent', 
-          outline: 'none',
-          width: '100%',
-          marginLeft: '10px'
-        }} 
-      />
-    </div>
-    <div className="profile-area">
-      <span>🔔</span>
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" />
-      <span>Dr. Smith</span>
-      <button>+</button>
-    </div>
-  </header>
-);
-
+const Header = () => {
+  return (
+    <header className="header-main">
+      <div className="header-logo-section">
+        <h1 className="logo-text">Healthcare.</h1>
+      </div>
+      <div className="header-search-section">
+        {/* Using text for icon */}
+        <span className="search-icon-placeholder">Q</span>
+        <input type="text" placeholder="Search" className="search-input-field" />
+      </div>
+      <div className="header-actions-section">
+        {/* Using text for icons */}
+        <span className="action-icon-placeholder">🔔</span>
+        <span className="action-icon-placeholder user-avatar-placeholder"></span>
+        <button className="add-new-button">+</button>
+      </div>
+    </header>
+  );
+};
 export default Header;

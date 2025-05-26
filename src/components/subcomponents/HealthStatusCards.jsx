@@ -1,54 +1,26 @@
 import React from 'react';
 import healthStatus from '../../data/healthStatus';
 
-const getStatusClass = (status) => {
-  switch(status.toLowerCase()) {
-    case 'normal':
-      return 'status-normal';
-    case 'elevated':
-      return 'status-elevated';
-    case 'low':
-      return 'status-low';
-    default:
-      return '';
-  }
-};
-
-const getStatusIcon = (status) => {
-  switch(status.toLowerCase()) {
-    case 'normal':
-      return '✅';
-    case 'elevated':
-      return '⚠️';
-    case 'low':
-      return '❗';
-    default:
-      return '❓';
-  }
-};
-
-const HealthStatusCards = () => (
-  <div className="status-cards">
-    {healthStatus.map(item => (
-      <div key={item.name} className="card">
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <h3>{item.name}</h3>
-          <span>{getStatusIcon(item.status)}</span>
+const HealthStatusCards = () => {
+  return (
+    <div className="health-status-cards-list">
+      {healthStatus.map((status, index) => (
+        <div key={index} className="health-status-item">
+          <div className="health-status-icon-placeholder">{status.iconPlaceholder || '🦷'}</div>
+          <div className="health-status-info">
+            <p className="health-status-name">{status.name}</p>
+            <p className="health-status-date">{status.date}</p>
+          </div>
+          <div className="health-status-progress-bar-container">
+            <div 
+              className="health-status-progress-bar" 
+              style={{ width: status.progress }}
+            ></div>
+          </div>
         </div>
-        <p className={getStatusClass(item.status)}>
-          {item.value}
-          <span style={{ 
-            fontSize: '14px', 
-            marginLeft: '5px',
-            color: '#666'
-          }}>
-            ({item.status})
-          </span>
-        </p>
-        <small>{item.date}</small>
-      </div>
-    ))}
-  </div>
-);
+      ))}
+    </div>
+  );
+};
 
 export default HealthStatusCards;

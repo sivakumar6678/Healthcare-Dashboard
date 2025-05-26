@@ -9,9 +9,9 @@ import './styles/components.css';
 function App() {
   return (
     <div className="app-container">
-      <Sidebar />
-      <div className="main-content">
         <Header />
+        <div className="main-content-area">
+      <Sidebar />
         <Dashboard />
       </div>
     </div>
