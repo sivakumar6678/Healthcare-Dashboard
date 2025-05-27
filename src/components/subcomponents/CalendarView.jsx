@@ -4,7 +4,6 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import SimpleAppointmentCard from './SimpleAppointmentCard';
 
 const CalendarView = () => {
-  // Dummy data for calendar days
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const dates = [
     { date: 20, appointments: ["10:00", "11:00", "12:00"] },

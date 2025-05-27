@@ -11,8 +11,8 @@ const ActivityFeed = () => {
     { day: 'Sun', values: [40, 25, 15, 10, 5] },
   ];
   
-  const maxBarHeight = 120; // Maximum height for the tallest bar in pixels
-  const maxValue = 100; // Maximum value in the data
+  const maxBarHeight = 120; 
+  const maxValue = 100; 
 
   return (
     <div className="content-card activity-feed-container">
