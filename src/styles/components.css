@@ -1,735 +1,423 @@
- /* Header Styles */
-  .header-main {
-    background-color: #ffffff;
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e8edf3; /* Lighter border */
-    height: 70px; 
-    box-sizing: border-box;
-  }
-
-  .header-logo-section .logo-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #6A7BFF; 
-    margin: 0;
-  }
-  .header-logo-section .logo-text .highlighted-text{
-    color: #344054;
-  }
-
-  .header-search-section {
-    display: flex;
-    align-items: center;
-    background-color: #f4f7fc; 
-    padding: 8px 15px;
-    border-radius: 10px;
-    width: 380px;
-  }
-  .search-icon-placeholder {
-    margin-right: 10px;
-    color: #9babc5;
-    font-size: 16px;
-  }
-
-  .search-input-field {
-    border: none;
-    background-color: transparent;
-    outline: none;
-    width: 100%;
-    font-size: 14px;
-    color: #333;
-  }
-  .search-input-field::placeholder {
-    color: #9babc5;
-  }
-
-  .header-actions-section {
-    display: flex;
-    align-items: center;
-  }
-
-  .action-icon-placeholder {
-    font-size: 20px; 
-    color: #7a8fa8;
-    margin-left: 25px;
-    cursor: pointer;
-  }
-
-  .user-avatar-placeholder {
-    width: 40px;
-    height: 40px;
-    background-color: #6A7BFF;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 25px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .user-avatar-placeholder::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .add-new-button {
-    background-color: #6A7BFF; 
-    color: white;
-    border: none;
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    font-weight: normal;
-    margin-left: 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(106, 123, 255, 0.3);
-  }
-
-  /* Sidebar Styles */
-  .sidebar-navigation {
-    width: 260px;
-    background-color: #ffffff; 
-    padding: 25px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: calc(100vh - 70px); 
-    border-right: 1px solid #e8edf3;
-    box-sizing: border-box;
-  }
-
-  .sidebar-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .sidebar-menu-item {
-    display: flex;
-    align-items: center;
-    padding: 14px 30px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    color: #7a8fa8;
-    border-left: 4px solid transparent;
-  }
-
-  .menu-icon-placeholder {
-    margin-right: 15px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-  }
-
-  .menu-link-text {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: inherit;
-  }
-
-  .sidebar-menu-item.active {
-    background-color: #eff5ff;
-    border-left: 4px solid #6A7BFF;
-    padding-left: 30px;
-    color: #6A7BFF;
-  }
-
-  .sidebar-menu-item.active .menu-icon-placeholder,
-  .sidebar-menu-item.active .menu-link-text {
-    color: #6A7BFF;
-    font-weight: 600;
-  }
-
-  .sidebar-menu-item:hover:not(.active) {
-    background-color: #f5f8fd;
-    color: #6A7BFF;
-  }
-  
-  .sidebar-menu-item:hover:not(.active) .menu-icon-placeholder,
-  .sidebar-menu-item:hover:not(.active) .menu-link-text {
-    color: #6A7BFF;
-  }
-
-
-  .sidebar-bottom-link {
-    display: flex;
-    align-items: center;
-    padding: 20px 30px;
-    border-top: 1px solid #e8edf3;
-    color: #7a8fa8;
-    margin-top: auto;
-    cursor: pointer;
-  }
-  
-  .sidebar-bottom-link .menu-icon-placeholder {
-    margin-right: 15px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-  }
-  
-  .sidebar-bottom-link .menu-link-text {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: inherit;
-  }
-  
-  .sidebar-bottom-link:hover {
-    color: #6A7BFF;
-  }
-  
-  .sidebar-bottom-link:hover .menu-icon-placeholder,
-  .sidebar-bottom-link:hover .menu-link-text {
-    color: #6A7BFF;
-  }
-
-
-  /* Dashboard Styles */
-  .dashboard-main-container {
-    flex-grow: 1;
-    padding: 30px;
-    background-color: #f4f7fc; 
-    overflow-y: auto; 
-    height: calc(100vh - 70px); 
-    box-sizing: border-box;
-  }
-
-  .dashboard-header-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-
-  .dashboard-title-text {
-    font-size: 24px;
-    font-weight: 600;
-    color: #344054;
-    margin: 0;
-  }
-
-  .dashboard-filter-options {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #5a6ac0;
-    background-color: #ffffff;
-    padding: 10px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 1px solid #e8edf3;
-    font-weight: 500;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-
-  .filter-arrow-placeholder {
-    margin-left: 10px;
-    font-size: 10px;
-    color: #7a8fa8;
-  }
-
-  .dashboard-grid-layout {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 25px;
-  }
-
-  .dashboard-grid-left,
-  .dashboard-grid-right {
-    display: flex;
-    flex-direction: column;
-    gap: 25px; 
-  }
-
-  /* Anatomy Section Styles */
-  .anatomy-section-container {
-    display: flex;
-    gap: 25px; 
-    align-items: flex-start; 
-    padding: 25px;
-  }
-
-  .anatomy-image-placeholder {
-    position: relative; 
-    min-width: 180px;
-    max-width: 180px;
-    height: 320px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .anatomy-actual-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .anatomy-label {
-    position: absolute;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 10px;
-    font-weight: 500;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-    white-space: nowrap;
-  }
-
-  .healthy-leg-label {
-    bottom: 40px; 
-    left: 5px; 
-    background-color: #4CAF50;
-  }
-
-  .healthy-heart-label {
-    top: 90px; 
-    right: -5px;
-    background-color: #F44336;
-  }
-
-
-  /* Health Status Cards (within Anatomy Section) */
-  .health-status-cards-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex-grow: 1; 
-  }
-
-  .health-status-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 8px 0;
-  }
-
-  .health-status-icon-placeholder {
-    font-size: 18px; 
-    color: #6A7BFF;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #eff5ff;
-    border-radius: 10px;
-    flex-shrink: 0;
-  }
-
-  .health-status-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .health-status-name {
-    font-weight: 600;
-    font-size: 14px;
-    margin: 0 0 4px 0;
-    color: #344054;
-  }
-
-  .health-status-date {
-    font-size: 12px;
-    color: #7f8c9f;
-    margin: 0;
-  }
-
-  .health-status-progress-bar-container {
-    width: 80px;
-    height: 4px;
-    background-color: #e8edf3;
-    border-radius: 2px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .health-status-progress-bar {
-    height: 100%;
-    border-radius: 2px;
-  }
-  
-  .health-status-item:nth-child(1) .health-status-progress-bar { background-color: #F44336; } /* Lungs - Red */
-  .health-status-item:nth-child(2) .health-status-progress-bar { background-color: #FFC107; } /* Teeth - Amber/Yellow */
-  .health-status-item:nth-child(3) .health-status-progress-bar { background-color: #00BCD4; } /* Bone - Cyan/Teal */
-
-
-  /* Calendar View Styles */
-  .calendar-view-container {
-    padding: 25px; /* More padding */
-  }
-
-  .calendar-header-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px; /* More space */
-  }
-
-  .calendar-month-year-text {
-    font-size: 18px; /* Larger */
-    font-weight: 600; /* Bolder */
-    color: #344054;
-  }
-
-  .calendar-navigation-buttons .calendar-nav-button {
-    background-color: #fff; /* White background */
-    border: 1px solid #d0d5dd; /* Clearer border */
-    color: #6A7BFF;
-    padding: 6px 10px; /* Adjusted padding */
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 8px;
-    font-weight: bold;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .calendar-navigation-buttons .calendar-nav-button:hover {
-      background-color: #f8f9fc;
-  }
-
-
-  .calendar-table-main {
-    width: 100%;
-    border-collapse: separate; /* To allow border-radius on cells */
-    border-spacing: 0;
-    margin-bottom: 20px;
-  }
-
-  .calendar-table-main th, .calendar-table-main td {
-    text-align: center;
-    padding: 10px 5px; /* More padding */
-    font-size: 13px; /* Slightly larger */
-  }
-
-  .calendar-table-main th {
-    color: #6c798b; /* Lighter gray for day names */
-    font-weight: 500;
-    padding-bottom: 12px;
-  }
-
-  .calendar-day-cell {
-    vertical-align: top;
-    border: 1px solid #f3f5f9; /* Very light cell borders */
-    height: 80px; 
-  }
-  .calendar-day-cell:first-child { border-top-left-radius: 8px; border-bottom-left-radius: 8px;}
-  .calendar-day-cell:last-child { border-top-right-radius: 8px; border-bottom-right-radius: 8px;}
-
-  .calendar-day-cell .date-number {
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 6px;
-      color: #455165;
-  }
-  .appointments-on-day .appointment-time-slot {
-      font-size: 10px;
-      background-color: #e6eaff; /* Lighter blue */
-      color: #5a6ac0; /* Darker blue text */
-      padding: 3px 6px;
-      border-radius: 4px;
-      margin-bottom: 3px;
-      display: block; /* Take full width within cell padding */
-      text-align: left;
-      font-weight: 500;
-  }
-
-  .calendar-day-cell.highlighted-day .date-number {
-      color: #ffffff;
-      background-color: #6A7BFF;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 6px;
-  }
-  .appointments-on-day .highlighted-appointment { /* This style was for slots on highlighted day */
-      background-color: #6A7BFF; /* Primary color for highlighted slots */
-      color: white;
-  }
-  /* If a specific time slot itself is the main event, it might have different styling */
-  /* For now, assuming highlighted-day affects its children */
-
-
-  .calendar-bottom-appointments {
-      display: grid; /* Use grid for two columns */
-      grid-template-columns: 1fr 1fr;
-      gap: 20px; /* Gap between the two cards */
-      margin-top: 15px; 
-  }
-
-  /* Simple Appointment Card Styles (Dentist, Physiotherapy) */
-  .simple-appointment-card-item {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    padding: 18px; /* More padding */
-    border-radius: 12px; /* More rounded */
-    gap: 15px; /* Increased gap */
-  }
-  .light-purple-bg {
-      background-color: #F2F4FF; /* Very light purple from image */
-  }
-  .light-gray-bg { /* This is for Physiotherapy, image shows very light purple too */
-      background-color: #F2F4FF; /* Matching the other card as per image */
-  }
-
-  .appointment-card-icon {
-    font-size: 18px; 
-    padding: 10px; /* More padding for icon bg */
-    border-radius: 10px; /* More rounded icon bg */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .light-purple-bg .appointment-card-icon {
-      background-color: #E1E8FF; 
-      color: #6A7BFF;
-  }
-  .light-gray-bg .appointment-card-icon { /* Matching above */
-      background-color: #E1E8FF;
-      color: #6A7BFF;
-  }
-
-  .appointment-card-details {
-    flex-grow: 1;
-  }
-  .appointment-card-type {
-    font-size: 14px; /* Slightly larger */
-    font-weight: 600; /* Bolder */
-    color: #344054;
-    margin: 0 0 3px 0;
-  }
-  .appointment-card-time {
-    font-size: 12px;
-    color: #5a6ac0; /* Primary-like color for time */
-    margin: 0 0 4px 0;
-    font-weight: 500;
-  }
-  .appointment-card-doctor {
-    font-size: 12px;
-    color: #6c798b; /* Lighter gray for doctor name */
-    margin: 0;
-  }
-  .appointment-card-options-icon {
-      font-size: 18px; /* Larger dots */
-      color: #9babc5; /* Lighter dots */
-      cursor: pointer;
-      font-weight: bold;
-  }
-
-
-  /* Upcoming Schedule Styles */
-  .upcoming-schedule-container {
-    padding: 25px; /* More padding */
-  }
-
-  .upcoming-schedule-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px; /* More space */
-  }
-
-  .upcoming-schedule-title {
-    font-size: 18px; /* Larger */
-    font-weight: 600; /* Bolder */
-    color: #344054;
-    margin: 0;
-  }
-
-  .upcoming-schedule-details-link {
-    font-size: 13px;
-    color: #6A7BFF;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .upcoming-schedule-details-link:hover {
-      text-decoration: underline;
-  }
-
-  .schedule-day-group {
-    margin-bottom: 20px; /* More space between day groups */
-  }
-  .schedule-day-group:last-child {
-    margin-bottom: 0;
-  }
-
-  .schedule-day-text {
-    font-size: 13px;
-    font-weight: 500;
-    color: #6c798b; /* Lighter gray */
-    margin: 0 0 10px 0; /* More space below day text */
-  }
-
-  .schedule-appointments-list {
-    display: flex;
-    gap: 12px; 
-  }
-
-  .schedule-appointment-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 15px; 
-    border-radius: 12px; /* More rounded */
-  }
-  .schedule-item-light-purple {
-      background-color: #F2F4FF; /* Matches other light purple cards */
-  }
-  .schedule-item-light-gray {
-      background-color: #F9FAFB; /* Very light gray for differentiation if needed, or match above */
-  }
-  .default-schedule-bg { 
-      background-color: #f8f9fa;
-  }
-
-
-  .schedule-item-info .schedule-item-name {
-    font-size: 14px;
-    font-weight: 600; /* Bolder */
-    color: #344054;
-    margin: 0 0 3px 0;
-  }
-  .schedule-item-info .schedule-item-time {
-    font-size: 12px;
-    color: #6c798b; /* Lighter gray for time */
-    margin: 0;
-  }
-
-  .schedule-item-icon-placeholder {
-    font-size: 18px;
-    padding: 8px; /* Consistent padding */
-    border-radius: 8px; /* Consistent rounding */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .schedule-item-light-purple .schedule-item-icon-placeholder {
-      background-color: #E1E8FF;
-      color: #6A7BFF;
-  }
-  .schedule-item-light-gray .schedule-item-icon-placeholder {
-      background-color: #EAEEF3; /* Lighter bg for gray items */
-      color: #5a6ac0; /* Icon color for gray items */
-  }
-
-
-  /* Activity Feed Styles */
-  .activity-feed-container {
-    padding: 25px; /* More padding */
-  }
-
-  .activity-feed-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 25px; /* More space */
-  }
-
-  .activity-feed-title {
-    font-size: 18px; /* Larger */
-    font-weight: 600; /* Bolder */
-    color: #344054;
-    margin: 0 0 5px 0;
-  }
-
-  .activity-feed-summary {
-    font-size: 13px; /* Slightly larger */
-    color: #6c798b; /* Lighter gray */
-    margin: 0;
-  }
-
-  .activity-legend {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .legend-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-  }
-
-  .legend-color-1 { background-color: #A0D4F7; }
-  .legend-color-2 { background-color: #6A7BFF; }
-  .legend-color-3 { background-color: #D1D9E6; }
-
-  .legend-text {
-    font-size: 12px;
-    color: #6c798b;
-  }
-
-  .activity-bars-chart {
-    display: flex;
-    justify-content: space-around; 
-    align-items: flex-end; 
-    height: 130px; /* Slightly taller chart */
-    border-bottom: 1px solid #e8edf3; /* Lighter axis line */
-    padding-bottom: 8px; /* More space for labels */
-  }
-
-  .activity-day-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px; /* Space between bars and label */
-  }
-
-  .activity-bars-group {
-    display: flex;
-    align-items: flex-end; 
-    gap: 4px; /* Slightly more space between bars */
-    height: 100%; 
-  }
-
-  .activity-bar {
-    width: 5px; /* Slightly thinner bars */
-    border-radius: 3px 3px 0 0; 
-    transition: height 0.3s ease;
-  }
-
-  /* Different colors for bars in a group, matching image */
-  .activity-bar.bar-1 { background-color: #A0D4F7; } 
-  .activity-bar.bar-2 { background-color: #6A7BFF; } 
-  .activity-bar.bar-3 { background-color: #D1D9E6; } 
-
-  .activity-day-label {
-    font-size: 12px; /* Slightly larger */
-    color: #6c798b; /* Lighter gray */
-    margin-top: 5px;
-  }
+/* ===== GLOBAL STYLES ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f7fc;
+  color: #344054;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/* ===== ANATOMY SECTION ===== */
+.anatomy-section-container {
+  display: flex;
+  gap: 25px; 
+  align-items: flex-start; 
+  padding: 25px;
+  flex-wrap: wrap;
+}
+
+.anatomy-image-placeholder {
+  position: relative; 
+  width: 350px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.anatomy-actual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.anatomy-label {
+  position: absolute;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+
+.healthy-leg-label {
+  bottom: 110px; 
+  left: 25px; 
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: aqua;
+  color: blue;
+}
+
+.healthy-heart-label {
+  top: 90px; 
+  right: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: rgb(122, 41, 197);
+}
+
+/* Health Cards List */
+.health-status-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  padding-right: 15px;
+}
+
+/* Single Health Status Item */
+.health-status-item {
+  gap: 20px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  height: auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.health-status-icon-placeholder {
+  width: 70px;
+  height: 70px;
+  background-color: #eff5ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin:0 1.2rem;
+}
+
+.organ-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.health-status-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.health-status-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #344054;
+  margin-left:1rem;
+}
+
+.health-status-date {
+  font-size: 14px;
+  color: #7f8c9f;
+  margin: 0;
+}
+
+.health-status-progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e8edf3;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.health-status-progress-bar {
+  height: 100%;
+  border-radius: 2px;
+}
+
+
+.health-status-item:nth-child(1) .health-status-progress-bar { background-color: #aa2828; }
+.health-status-item:nth-child(2) .health-status-progress-bar { background-color: #2ed6ac; }
+.health-status-item:nth-child(3) .health-status-progress-bar { background-color: #e7612c; }
+
+/* ===== CALENDAR VIEW ===== */
+.calendar-view-container {
+  padding: 20px;
+}
+
+.calendar-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-month-year-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #344054;
+}
+
+.calendar-navigation-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.calendar-nav-button {
+  background: none;
+  border: none;
+  color: #7a8fa8;
+  cursor: pointer;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f7fc;
+}
+
+.calendar-days-grid {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  margin-bottom: 20px;
+}
+
+.day-name {
+  font-size: 12px;
+  color: #7a8fa8;
+  font-weight: normal;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.calendar-day-cell {
+  background-color: #f4f7fc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+  height: 80px;
+}
+
+.highlighted-day {
+  background-color: #eff5ff;
+  border: 1px solid #6A7BFF;
+}
+
+.date-number {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+  margin-bottom: 8px;
+}
+
+.appointments-on-day {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.appointment-time-slot {
+  font-size: 12px;
+  color: #7a8fa8;
+}
+
+.highlighted-appointment {
+  background-color: #6A7BFF;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.calendar-bottom-appointments {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== SIMPLE APPOINTMENT CARD ===== */
+.simple-appointment-card-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+.simple-appointment-card-item:first-child{
+  background-color: rgb(79, 79, 196);
+  color:white;
+}
+.simple-appointment-card-item:first-child .appointment-card-details p{
+  color: white;
+}
+.simple-appointment-card-item:last-child{
+  background-color:rgba(170, 188, 212, 0.651);
+  width: 60%;
+}
+.simple-appointment-card-item:last-child .appointment-card-details p{
+  color: black;
+}
+
+.light-purple-bg {
+  background-color: #eff5ff;
+}
+
+.light-gray-bg {
+  background-color: #f4f7fc;
+}
+
+.appointment-card-icon {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.appointment-card-details {
+  flex-grow: 1;
+}
+
+.appointment-card-type {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+  margin: 0 0 4px 0;
+}
+
+.appointment-card-time,
+.appointment-card-doctor {
+  font-size: 12px;
+  color: #7a8fa8;
+  margin: 0;
+}
+
+.appointment-card-options-icon {
+  color: #7a8fa8;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ===== ACTIVITY FEED ===== */
+.activity-feed-container {
+  padding: 20px;
+}
+
+
+.activity-bars-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 150px;
+}
+
+.activity-day-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.activity-bars-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 120px;
+  justify-content: flex-end;
+}
+
+.activity-bar {
+  width: 5px;
+  border-radius: 4px;
+}
+
+.activity-bar.bar-1 { background-color: aqua; }
+.activity-bar.bar-2 { background-color: #6A7BFF; }
+.activity-bar.bar-3 { background-color: #D1D9E6; }
+
+.activity-day-label {
+  font-size: 12px;
+  color: #6c798b;
+}
+
+/* ===== UPCOMING SCHEDULE ===== */
+.upcoming-schedule-container {
+  padding: 20px;
+}
+
+.upcoming-schedule-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #344054;
+  margin: 0 0 20px 0;
+}
+
+.schedule-day-group {
+  margin-bottom: 20px;
+  display: inline;
+}
+
+.schedule-day-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+  margin: 0 0 10px 0;
+}
+
+.schedule-items-container {
+  display: flex;
+  gap: 10px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 25px;
+  background-color:rgba(170, 188, 212, 0.651);
+
+}
+
+.schedule-item-icon {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.schedule-item-details {
+  flex-grow: 1;
+}
+
+.schedule-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+  margin: 0 0 4px 0;
+}
+
+.schedule-item-time {
+  font-size: 12px;
+  color: #7a8fa8;
+  margin: 0;
+}

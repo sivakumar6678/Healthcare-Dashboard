@@ -11,4 +11,3 @@ export const footerNavLinksData = [
     { id: 8, name: 'Setting', icon: '⚙️', path: '/settings'}
 ];
 
-// export default navLinksData;

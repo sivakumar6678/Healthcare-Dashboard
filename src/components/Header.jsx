@@ -1,22 +1,23 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faBell, faPlus } from '@fortawesome/free-solid-svg-icons';
+import avatar from '../assets/avatar.webp';
+
 const Header = () => {
-  const userName = "Dr. Kevin";
-  const userAvatarUrl = "https://placehold.co/36x36/E2E8F0/4A5568?text=DK"; 
   return (
     <header className="app-header">
-      <div className="header-search">
-        <span className="search-icon">🔍</span>
-        Search
+      <div className="header-left">
+        <div className="search-container">
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          <input type="text" placeholder="Search" className="search-input" />
+        <FontAwesomeIcon icon={faBell} className="notification-icon" />
+        </div>
       </div>
-      <div className="header-month-navigation">
-        <button className="month-nav-arrow">&lt;</button>
-        <span className="current-month-year">October 2021</span>
-        <button className="month-nav-arrow">&gt;</button>
-      </div>
-      <div className="header-user-controls">
-        <span className="notification-icon">🔔</span>
-        <img src={userAvatarUrl} alt="User Avatar" className="user-avatar" />
-        <span className="user-name">{userName}</span>
-        <button className="add-new-button">+</button>
+      <div className="header-right">
+        <div className="user-avatar"> <img src={avatar} alt="" className='avatar' /> </div>
+        <button className="add-new-button">
+          <FontAwesomeIcon icon={faPlus} />
+        </button>
       </div>
     </header>
   );

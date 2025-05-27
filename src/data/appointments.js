@@ -1,14 +1,21 @@
+
+
 const appointments = [
-  { dayGroup: 'On Thursday', appointments: [
-      { id: 'thu1', title: 'Health checkup complete', time: '11:00 AM', icon: '🩺', cardClass: 'health-checkup' },
-      { id: 'thu2', title: 'Ophthalmologist', time: '14:00 PM', icon: '👁️', cardClass: 'ophthalmologist' },
-    ]
+  {
+    day: 'Today, 23 May',
+    items: [
+      { name: 'Health checkup complete', time: '11:00 AM', iconPlaceholder: '💉'},
+      { name: 'Ophthalmologist', time: '14:00 PM', iconPlaceholder: '👁️'},
+    ],
   },
-  { dayGroup: 'On Saturday', appointments: [
-      { id: 'sat1', title: 'Cardiologist', time: '12:00 AM', icon: '❤️', cardClass: 'cardiologist' },
-      { id: 'sat2', title: 'Neurologist', time: '16:00 PM', icon: '🧠', cardClass: 'neurologist' },
-    ]
-  }
+  {
+    day: 'Tomorrow, 24 May',
+    items: [
+      { name: 'Cardiologist', time: '12:00 AM', iconPlaceholder: '❤️'},
+      { name: 'Neurologist', time: '16:00 PM', iconPlaceholder: '👨‍⚕️'},
+    ],
+  },
 ];
+
 export default appointments;
 

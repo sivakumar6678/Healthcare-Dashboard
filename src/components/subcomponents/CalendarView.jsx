@@ -1,60 +1,75 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import SimpleAppointmentCard from './SimpleAppointmentCard';
-const calendarAppointments = {
-  '27': { type: 'dentist', title: 'Dentist', time: '09:00-11:00', doctor: 'Dr. Cameron Williamson', icon: '🦷' },
-  '29': { type: 'physiotherapy', title: 'Physiotherapy Appointment', time: '11:00-12:00', doctor: 'Dr. Kevin Djones', icon: '💪' }
-};
+
 const CalendarView = () => {
-  const weekDaysForCalendar = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
-  const daysOfMonthForCalendar = [
-    { date: 25, timeSlots: ['10:00', '11:00', '12:00'] },
-    { date: 26, timeSlots: ['08:00', '09:00', '10:00'] },
-    { date: 27, timeSlots: ['12:00', '13:00'], appointmentKey: '27' }, 
-    { date: 28, timeSlots: ['10:00', '11:00'] },
-    { date: 29, timeSlots: ['14:00', '16:00'], appointmentKey: '29' }, 
-    { date: 30, timeSlots: ['12:00', '14:00', '15:00'] },
-    { date: 31, timeSlots: ['09:00', '10:00', '11:00'] },
+  // Dummy data for calendar days
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const dates = [
+    { date: 20, appointments: ["10:00", "11:00", "12:00"] },
+    { date: 21, appointments: ["08:00", "09:00", "10:00"] },
+    { date: 22, appointments: ["12:00", "13:00", "14:00"] },
+    { date: 23, appointments: ["10:00", "11:00", "13:00"], isHighlighted: true },
+    { date: 24, appointments: ["14:00", "16:00", "17:00"] },
+    { date: 25, appointments: ["12:00", "14:00", "15:00"] },
+    { date: 26, appointments: ["09:00", "10:00", "11:00"] },
   ];
 
   return (
-    <div className="content-card calendar-grid-card">
-      <div className="calendar-weekdays-header">
-        {weekDaysForCalendar.map(dayName => (
-          <div key={dayName} className="weekday-name">{dayName}</div>
-        ))}
+    <div className="content-card calendar-view-container">
+      <div className="calendar-header-controls">
+        <span className="calendar-month-year-text">May 2025</span>
+        <div className="calendar-navigation-buttons">
+          <button className="calendar-nav-button">
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <button className="calendar-nav-button">
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
       </div>
-      <div className="calendar-days-grid">
-        {daysOfMonthForCalendar.map(dayData => {
-          const appointment = dayData.appointmentKey ? calendarAppointments[dayData.appointmentKey] : null;
-          let cellClass = "calendar-day-cell";
-          if (appointment) {
-            cellClass += ` appointment-day-${appointment.type}`;
-          }
-          if ([27,29,30,31].includes(dayData.date)){
-            cellClass += " prominent-day";
-          }
-
-          return (
-            <div key={dayData.date} className={cellClass}>
-              <span className="day-date-number">{dayData.date}</span>
-              <div className="day-time-slots">
-                {dayData.timeSlots.map(time => (
-                  <span key={time} className="time-slot">{time}</span>
-                ))}
-              </div>
-              {appointment && (
-                <div className={`calendar-appointment-block type-${appointment.type}`}>
-                  <p className="appointment-block-title">{appointment.title.split(' ')[0]}</p>
-                  <p className="appointment-block-time">{appointment.time.split('-')[0]}</p>
-                  {appointment.type === 'dentist' && <p className="appointment-block-doctor">{appointment.doctor}</p>}
-                  {appointment.type === 'physiotherapy' && <p className="appointment-block-doctor">{appointment.doctor}</p>}
+      <table className="calendar-days-grid">
+        <thead>
+          <tr>
+            {days.map(day => (
+              <th key={day} className="day-name">{day}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {dates.map(d => (
+              <td key={d.date} className={`calendar-day-cell ${d.isHighlighted ? 'highlighted-day' : ''}`}>
+                <div className="date-number">{d.date}</div>
+                <div className="appointments-on-day">
+                  {d.appointments.map((time, i) => (
+                    <div key={i} className={`appointment-time-slot ${d.isHighlighted && i === 0 ? 'highlighted-appointment' : ''}`}>{time}</div>
+                  ))}
                 </div>
-              )}
-            </div>
-          );
-        })}
+              </td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+      <div className="calendar-bottom-appointments">
+        <SimpleAppointmentCard 
+            type="Dentist"
+            time="10:00-11:00"
+            doctor="Dr. Cameron Williamson"
+            icon="🦷"
+            bgColor="light-purple-bg"
+        />
+        <SimpleAppointmentCard 
+            type="Physiotherapy"
+            time="11:00-12:00"
+            doctor="Dr. Kevin Jones"
+            icon="💪"
+            bgColor="light-gray-bg"
+        />
       </div>
     </div>
   );
 };
+
 export default CalendarView;

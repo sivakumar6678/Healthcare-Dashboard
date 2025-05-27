@@ -1,36 +1,42 @@
 import React from 'react';
+
 const ActivityFeed = () => {
-  const activityDataForChart = [
-    { day: 'Mon', value: 30, colorClass: 'bar-color-1' },
-    { day: 'Tue', value: 65, colorClass: 'bar-color-2' },
-    { day: 'Wed', value: 40, colorClass: 'bar-color-1' },
-    { day: 'Thu', value: 85, colorClass: 'bar-color-2' },
-    { day: 'Fri', value: 50, colorClass: 'bar-color-1' },
-    { day: 'Sat', value: 70, colorClass: 'bar-color-2' },
-    { day: 'Sun', value: 25, colorClass: 'bar-color-1' },
+  const activityData = [
+    { day: 'Mon', values: [60, 45, 30, 20, 10] },
+    { day: 'Tue', values: [80, 55, 40, 25, 15] },
+    { day: 'Wed', values: [50, 35, 25, 15, 10] },
+    { day: 'Thu', values: [90, 70, 50, 30, 20] },
+    { day: 'Fri', values: [75, 60, 40, 25, 15] },
+    { day: 'Sat', values: [55, 40, 30, 20, 10] },
+    { day: 'Sun', values: [40, 25, 15, 10, 5] },
   ];
-  const maxBarHeight = 80; 
+  
+  const maxBarHeight = 120; // Maximum height for the tallest bar in pixels
+  const maxValue = 100; // Maximum value in the data
 
   return (
-    <div className="content-card activity-chart-card">
-      <div className="activity-chart-header">
-        <h2 className="card-title">Activity</h2>
-        <span className="activity-summary-text">3 appointments this week</span>
-      </div>
-      <div className="activity-chart-bars-area">
-        {activityDataForChart.map(item => (
-          <div key={item.day} className="chart-bar-group">
-            <div 
-              className={`chart-bar ${item.colorClass}`}
-              style={{ height: `${(item.value / 100) * maxBarHeight}px` }}
-            ></div>
-            <span className="chart-bar-label">{item.day}</span>
+    <div className="content-card activity-feed-container">
+      
+      <div className="activity-bars-chart">
+        {activityData.map((data, index) => (
+          <div key={index} className="activity-day-column">
+            <div className="activity-bars-container">
+              {data.values.map((value, i) => (
+                <div 
+                  key={i} 
+                  className={`activity-bar bar-${i+1}`} 
+                  style={{ 
+                    height: `${(value / maxValue) * maxBarHeight}px`,
+                  }}
+                ></div>
+              ))}
+            </div>
+            <div className="activity-day-label">{data.day}</div>
           </div>
         ))}
       </div>
     </div>
   );
 };
-
 
 export default ActivityFeed;

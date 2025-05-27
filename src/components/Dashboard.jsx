@@ -3,20 +3,19 @@ import AnatomySection from './subcomponents/AnatomySection';
 import CalendarView from './subcomponents/CalendarView';
 import UpcomingSchedule from './subcomponents/UpcomingSchedule';
 import ActivityFeed from './subcomponents/ActivityFeed';
-
-const DashboardTitle = ({ mainTitle, subTitle }) => {
-  return (
-    <div className="dashboard-title-container">
-      <h1 className="dashboard-main-title">{mainTitle}</h1>
-      {subTitle && <span className="dashboard-subtitle">{subTitle}</span>}
-    </div>
-  );
-};
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
   return (
     <main className="dashboard-main-content">
-      <DashboardTitle mainTitle="Dashboard" subTitle="This Week" />
+      <div className="dashboard-header-section">
+        <h2 className="dashboard-title-text">Dashboard</h2>
+        <div className="dashboard-filter-options">
+          <span>This Week</span>
+          <FontAwesomeIcon icon={faChevronDown} className="filter-arrow" />
+        </div>
+      </div>
       <div className="dashboard-layout-grid">
         <section className="dashboard-left-column">
           <AnatomySection />

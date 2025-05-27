@@ -1,32 +1,75 @@
 import React from 'react';
-import {navLinksData, footerNavLinksData} from '../data/navLinks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTachometerAlt,
+  faHistory,
+  faCalendarAlt,
+  faUserMd,
+  faChartBar,
+  faComments,
+  faQuestionCircle,
+  faCog
+} from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
-  const activeLinkName = 'Dashboard';
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
-        Healthcare.
+        <span className="health">Health</span><span className="care">care</span>.
       </div>
-      <nav className="sidebar-nav">
-        <ul>
-          {navLinksData.map(link => (
-            <li key={link.id} className={link.name === activeLinkName ? 'nav-item active' : 'nav-item'}>
-              <a href={link.path}>
-                <span className="nav-icon">{link.icon}</span>
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="sidebar-section">General</div>
+      <ul className="sidebar-menu">
+        <li className="nav-item active">
+          <a >
+            <FontAwesomeIcon icon={faTachometerAlt} className="nav-icon" />
+            <span className="nav-text">Dashboard</span>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a >
+            <FontAwesomeIcon icon={faHistory} className="nav-icon" />
+            <span className="nav-text">History</span>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a >
+            <FontAwesomeIcon icon={faCalendarAlt} className="nav-icon" />
+            <span className="nav-text">Calendar</span>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a >
+            <FontAwesomeIcon icon={faUserMd} className="nav-icon" />
+            <span className="nav-text">Appointments</span>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a >
+            <FontAwesomeIcon icon={faChartBar} className="nav-icon" />
+            <span className="nav-text">Statistics</span>
+          </a>
+        </li>
+      </ul>
+      <div className="sidebar-section">Blog</div>
+      <ul className="sidebar-menu">
+        <li className="nav-item">
+          <a >
+            <FontAwesomeIcon icon={faComments} className="nav-icon" />
+            <span className="nav-text">Chat</span>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a >
+            <FontAwesomeIcon icon={faQuestionCircle} className="nav-icon" />
+            <span className="nav-text">Support</span>
+          </a>
+        </li>
+      </ul>
       <div className="sidebar-footer">
-        {footerNavLinksData.map(link => (
-             <a key={link.id} href={link.path} className="nav-item">
-                <span className="nav-icon">{link.icon}</span>
-                {link.name}
-            </a>
-        ))}
+        <a  className="nav-item">
+          <FontAwesomeIcon icon={faCog} className="nav-icon" />
+          <span className="nav-text">Settings</span>
+        </a>
       </div>
     </aside>
   );
