@@ -1,14 +1,14 @@
-import { FaTachometerAlt, FaHistory, FaCalendarAlt, FaRegCalendarCheck, FaChartLine, FaComments, FaQuestionCircle } from 'react-icons/fa';
-
-const navLinks = [
-  { name: 'Dashboard', path: '/', icon: FaTachometerAlt },
-  { name: 'History', path: '/history', icon: FaHistory },
-  { name: 'Calendar', path: '/calendar', icon: FaCalendarAlt },
-  { name: 'Appointments', path: '/appointments', icon: FaRegCalendarCheck },
-  { name: 'Statistics', path: '/statistics', icon: FaChartLine },
-  { name: 'Chat', path: '/chat', icon: FaComments },
-  { name: 'Support', path: '/support', icon: FaQuestionCircle },
+export const navLinksData = [
+  { id: 1, name: 'Dashboard', icon: '📊', path: '/dashboard' },
+  { id: 2, name: 'History', icon: '📜', path: '/history' },
+  { id: 3, name: 'Calendar', icon: '🗓️', path: '/calendar' },
+  { id: 4, name: 'Appointments', icon: '👨‍⚕️', path: '/appointments' },
+  { id: 5, name: 'Statistics', icon: '📈', path: '/statistics' },
+  { id: 6, name: 'Chat', icon: '💬', path: '/chat' },
+  { id: 7, name: 'Support', icon: '❓', path: '/support' },
+];
+export const footerNavLinksData = [
+    { id: 8, name: 'Setting', icon: '⚙️', path: '/settings'}
 ];
 
-
-export default navLinks;
+// export default navLinksData;

@@ -1,22 +1,21 @@
  /* Header Styles */
   .header-main {
     background-color: #ffffff;
-    padding: 0 30px;
+    padding: 15px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #e8edf3;
-    height: 80px; 
+    border-bottom: 1px solid #e8edf3; /* Lighter border */
+    height: 70px; 
     box-sizing: border-box;
   }
 
   .header-logo-section .logo-text {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: bold;
     color: #6A7BFF; 
     margin: 0;
   }
-  
   .header-logo-section .logo-text .highlighted-text{
     color: #344054;
   }
@@ -25,16 +24,14 @@
     display: flex;
     align-items: center;
     background-color: #f4f7fc; 
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 10px;
     width: 380px;
-    margin-left: 40px;
   }
   .search-icon-placeholder {
     margin-right: 10px;
     color: #9babc5;
-    display: flex;
-    align-items: center;
+    font-size: 16px;
   }
 
   .search-input-field {
@@ -44,9 +41,7 @@
     width: 100%;
     font-size: 14px;
     color: #333;
-    padding: 0;
   }
-  
   .search-input-field::placeholder {
     color: #9babc5;
   }
@@ -54,15 +49,13 @@
   .header-actions-section {
     display: flex;
     align-items: center;
-    margin-left: auto;
   }
 
   .action-icon-placeholder {
+    font-size: 20px; 
     color: #7a8fa8;
     margin-left: 25px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
   }
 
   .user-avatar-placeholder {
@@ -93,9 +86,9 @@
     color: white;
     border: none;
     border-radius: 10px;
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
     font-weight: normal;
     margin-left: 25px;
     cursor: pointer;
@@ -103,18 +96,17 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(106, 123, 255, 0.3);
-    padding: 0;
   }
 
   /* Sidebar Styles */
   .sidebar-navigation {
     width: 260px;
     background-color: #ffffff; 
-    padding: 30px 0;
+    padding: 25px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 80px); 
+    height: calc(100vh - 70px); 
     border-right: 1px solid #e8edf3;
     box-sizing: border-box;
   }
@@ -138,10 +130,12 @@
 
   .menu-icon-placeholder {
     margin-right: 15px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 24px;
+    height: 24px;
   }
 
   .menu-link-text {
@@ -154,6 +148,7 @@
   .sidebar-menu-item.active {
     background-color: #eff5ff;
     border-left: 4px solid #6A7BFF;
+    padding-left: 30px;
     color: #6A7BFF;
   }
 
@@ -186,10 +181,8 @@
   
   .sidebar-bottom-link .menu-icon-placeholder {
     margin-right: 15px;
+    font-size: 18px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
     align-items: center;
     justify-content: center;
     width: 24px;
@@ -219,7 +212,7 @@
     padding: 30px;
     background-color: #f4f7fc; 
     overflow-y: auto; 
-    height: calc(100vh - 80px); 
+    height: calc(100vh - 70px); 
     box-sizing: border-box;
   }
 
@@ -253,8 +246,8 @@
 
   .filter-arrow-placeholder {
     margin-left: 10px;
-    display: flex;
-    align-items: center;
+    font-size: 10px;
+    color: #7a8fa8;
   }
 
   .dashboard-grid-layout {
@@ -274,7 +267,8 @@
   .anatomy-section-container {
     display: flex;
     gap: 25px; 
-    align-items: flex-start;
+    align-items: flex-start; 
+    padding: 25px;
   }
 
   .anatomy-image-placeholder {
@@ -334,6 +328,7 @@
   }
 
   .health-status-icon-placeholder {
+    font-size: 18px; 
     color: #6A7BFF;
     width: 40px;
     height: 40px;
@@ -386,7 +381,7 @@
 
   /* Calendar View Styles */
   .calendar-view-container {
-    /* Padding is now handled by the card-style class */
+    padding: 25px; /* More padding */
   }
 
   .calendar-header-controls {
@@ -402,27 +397,19 @@
     color: #344054;
   }
 
-  .calendar-navigation-buttons {
-    display: flex;
-    gap: 8px;
-  }
-  
   .calendar-navigation-buttons .calendar-nav-button {
-    background-color: #fff;
-    border: 1px solid #e8edf3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border-radius: 8px;
+    background-color: #fff; /* White background */
+    border: 1px solid #d0d5dd; /* Clearer border */
+    color: #6A7BFF;
+    padding: 6px 10px; /* Adjusted padding */
+    border-radius: 6px;
     cursor: pointer;
+    margin-left: 8px;
+    font-weight: bold;
     box-shadow: 0 1px 2px rgba(0,0,0,0.03);
   }
-  
   .calendar-navigation-buttons .calendar-nav-button:hover {
-    background-color: #f8f9fc;
+      background-color: #f8f9fc;
   }
 
 
@@ -435,19 +422,19 @@
 
   .calendar-table-main th, .calendar-table-main td {
     text-align: center;
-    padding: 10px 5px;
-    font-size: 13px;
+    padding: 10px 5px; /* More padding */
+    font-size: 13px; /* Slightly larger */
   }
 
   .calendar-table-main th {
-    color: #6c798b;
+    color: #6c798b; /* Lighter gray for day names */
     font-weight: 500;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
   }
 
   .calendar-day-cell {
     vertical-align: top;
-    border: 1px solid #f3f5f9;
+    border: 1px solid #f3f5f9; /* Very light cell borders */
     height: 80px; 
   }
   .calendar-day-cell:first-child { border-top-left-radius: 8px; border-bottom-left-radius: 8px;}
@@ -456,17 +443,17 @@
   .calendar-day-cell .date-number {
       font-weight: 600;
       font-size: 14px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       color: #455165;
   }
   .appointments-on-day .appointment-time-slot {
       font-size: 10px;
-      background-color: #e6eaff;
-      color: #5a6ac0;
+      background-color: #e6eaff; /* Lighter blue */
+      color: #5a6ac0; /* Darker blue text */
       padding: 3px 6px;
       border-radius: 4px;
       margin-bottom: 3px;
-      display: block;
+      display: block; /* Take full width within cell padding */
       text-align: left;
       font-weight: 500;
   }
@@ -560,7 +547,7 @@
 
   /* Upcoming Schedule Styles */
   .upcoming-schedule-container {
-    /* Padding is now handled by the card-style class */
+    padding: 25px; /* More padding */
   }
 
   .upcoming-schedule-header {
@@ -657,7 +644,7 @@
 
   /* Activity Feed Styles */
   .activity-feed-container {
-    /* Padding is now handled by the card-style class */
+    padding: 25px; /* More padding */
   }
 
   .activity-feed-header {

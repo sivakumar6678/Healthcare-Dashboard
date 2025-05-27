@@ -1,51 +1,30 @@
 import React from 'react';
 const ActivityFeed = () => {
-  // Dummy data for activity bars
-  const activityData = [
-    { day: 'Mon', values: [30, 50, 20] },
-    { day: 'Tues', values: [40, 60, 30] },
-    { day: 'Wed', values: [20, 40, 10] },
-    { day: 'Thurs', values: [60, 70, 40] },
-    { day: 'Fri', values: [50, 60, 25] },
-    { day: 'Sat', values: [70, 80, 50] },
-    { day: 'Sun', values: [30, 45, 15] },
+  const activityDataForChart = [
+    { day: 'Mon', value: 30, colorClass: 'bar-color-1' },
+    { day: 'Tue', value: 65, colorClass: 'bar-color-2' },
+    { day: 'Wed', value: 40, colorClass: 'bar-color-1' },
+    { day: 'Thu', value: 85, colorClass: 'bar-color-2' },
+    { day: 'Fri', value: 50, colorClass: 'bar-color-1' },
+    { day: 'Sat', value: 70, colorClass: 'bar-color-2' },
+    { day: 'Sun', value: 25, colorClass: 'bar-color-1' },
   ];
+  const maxBarHeight = 80; 
 
   return (
-    <div className="activity-feed-container card-style">
-      <div className="activity-feed-header">
-        <div>
-          <h3 className="activity-feed-title">Activity</h3>
-          <p className="activity-feed-summary">5 appointments this week</p>
-        </div>
-        <div className="activity-legend">
-          <div className="legend-item">
-            <span className="legend-color legend-color-1"></span>
-            <span className="legend-text">Appointments</span>
-          </div>
-          <div className="legend-item">
-            <span className="legend-color legend-color-2"></span>
-            <span className="legend-text">Completed</span>
-          </div>
-          <div className="legend-item">
-            <span className="legend-color legend-color-3"></span>
-            <span className="legend-text">Cancelled</span>
-          </div>
-        </div>
+    <div className="content-card activity-chart-card">
+      <div className="activity-chart-header">
+        <h2 className="card-title">Activity</h2>
+        <span className="activity-summary-text">3 appointments this week</span>
       </div>
-      <div className="activity-bars-chart">
-        {activityData.map(data => (
-          <div key={data.day} className="activity-day-column">
-            <div className="activity-bars-group">
-              {data.values.map((value, index) => (
-                <div
-                  key={index}
-                  className={`activity-bar bar-${index + 1}`}
-                  style={{ height: `${value}%` }}
-                ></div>
-              ))}
-            </div>
-            <p className="activity-day-label">{data.day}</p>
+      <div className="activity-chart-bars-area">
+        {activityDataForChart.map(item => (
+          <div key={item.day} className="chart-bar-group">
+            <div 
+              className={`chart-bar ${item.colorClass}`}
+              style={{ height: `${(item.value / 100) * maxBarHeight}px` }}
+            ></div>
+            <span className="chart-bar-label">{item.day}</span>
           </div>
         ))}
       </div>
